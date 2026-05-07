@@ -32,8 +32,8 @@ jobs:
       
       - name: Build
         run: npm run build
-
-          - name: Create root page with AdSense meta tag only
+        
+      - name: Create root page with AdSense meta tag only
         run: |
           cat > dist/index.html << 'EOF'
           <!DOCTYPE html>
