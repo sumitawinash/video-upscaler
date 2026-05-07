@@ -1,58 +1,116 @@
 /* ============================================
-   CUSTOM BRANDING STYLES
+   PROFESSIONAL GRADIENT BACKGROUND (Lovable-style)
    ============================================ */
 
-/* Animated Gradient Background */
 body {
-  background: linear-gradient(135deg, #ff5005 0%, #dbba95 50%, #d0bce1 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  min-height: 100vh;
   position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #1a1a2e;
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
+/* Base gradient layer */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(238, 0, 255, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(219, 186, 149, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(208, 188, 225, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(255, 80, 5, 0.3) 0%, transparent 50%);
+  animation: gradientMove 20s ease infinite;
+  filter: blur(80px);
+  z-index: -2;
+}
+
+/* Animated overlay for depth */
+body::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(255, 20, 147, 0.2) 0%, transparent 50%);
+  animation: gradientMove 15s ease-in-out infinite reverse;
+  filter: blur(100px);
+  z-index: -1;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
   }
-  50% {
-    background-position: 100% 50%;
+  33% {
+    transform: translate(30px, -50px) rotate(120deg);
   }
-  100% {
-    background-position: 0% 50%;
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
   }
 }
 
-/* Font Families */
+/* Grain texture overlay for premium feel */
+body {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ============================================
+   FONT STYLES
+   ============================================ */
+
 h1, h2, h3, h4, h5, h6, #title {
   font-family: 'Instrument Serif', serif !important;
   font-weight: 400;
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 body, p, span, div, button, input, .text-base {
   font-family: 'Inter', sans-serif !important;
 }
 
-/* Better text visibility on gradient */
-#title {
-  color: #1a1a1a;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
-}
-
 #hero-text {
-  color: #2d2d2d;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* Improve panels on gradient background */
+/* ============================================
+   PANEL STYLES (Glass morphism)
+   ============================================ */
+
 #file-load-panel, 
 #start-panel, 
 #loading-panel, 
 #error-panel, 
 #unsupported-panel {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Button enhancement */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
