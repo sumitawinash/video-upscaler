@@ -42,12 +42,11 @@ jobs:
               <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <meta name="google-adsense-account" content="ca-pub-5929265228562391">
-              <meta http-equiv="refresh" content="0; url=/video-upscaler/">
               <title>Free AI Video Upscaler</title>
           </head>
           <body>
-              <h1>Redirecting...</h1>
-              <p><a href="/video-upscaler/">Click here</a></p>
+              <h1>Free AI Video Upscaler</h1>
+              <p><a href="https://sumitawinash.github.io/video-upscaler/" style="font-size: 24px; color: #1a73e8;">Go to Video Upscaler Tool →</a></p>
           </body>
           </html>
           EOF
