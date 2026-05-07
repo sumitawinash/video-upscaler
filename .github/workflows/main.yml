@@ -32,6 +32,25 @@ jobs:
       
       - name: Build
         run: npm run build
+
+          - name: Create root page with AdSense meta tag only
+        run: |
+          cat > dist/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta name="google-adsense-account" content="ca-pub-5929265228562391">
+              <meta http-equiv="refresh" content="0; url=/video-upscaler/">
+              <title>Free AI Video Upscaler</title>
+          </head>
+          <body>
+              <h1>Redirecting...</h1>
+              <p><a href="/video-upscaler/">Click here</a></p>
+          </body>
+          </html>
+          EOF
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
